@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T4FLLSGZ');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverTap Web Integration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4FLLSGZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header><img src="https://simonpointer.com/wp-content/uploads/2020/08/google-tag-manager.png" alt="CleverTap GTM"></header>
+    <div class="container">
+        <h1>CleverTap GTM Web SDK Integration</h1>
+        <form id="userForm">
+            <label for="identity">Identity:</label>
+            <input type="text" id="identity" name="identity" placeholder="Enter your Identity"><br><br>
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your Name"><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email"><br><br>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your Phone"><br><br>
+            
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" name="gender" placeholder="Enter your Gender"><br><br>
+            
+            <button type="button" onclick="sendUserData()">Submit User Data</button>
+        </form>
+
+    <form id="customEventForm">
+        <h2>Custom Events</h2>
+        <label for="dishName">Dish Name:</label>
+        <input type="text" id="dishName" name="dishName" placeholder="Enter Dish Name"><br><br>
+        
+        <label for="restaurantName">Restaurant Name:</label>
+        <input type="text" id="restaurantName" name="restaurantName" placeholder="Enter Restaurant Name"><br><br>
+        
+        <button type="button" onclick="triggerFoodItemAdded()">Add Food Item to Cart</button><br><br>
+        
+        <button type="button" onclick="triggerPaymentSuccessful()">Payment Successful</button>
+    </form>
+    
+</div>
+
+    <script>
+        function sendUserData() {
+            var identity = document.getElementById('identity').value;
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var gender = document.getElementById('gender').value;
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'User Logged In',
+                'userIdentity': identity,
+                'userName': name,
+                'userEmail': email,
+                'userPhone': phone,
+                'userGender': gender
+            });
+
+            console.log("OnUserLogin data pushed to dataLayer");
+        }
+
+        function triggerFoodItemAdded() {
+            var dishName = document.getElementById('dishName').value;
+            var restaurantName = document.getElementById('restaurantName').value;
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'Food Item Added to Cart', // Event name
+                'Dish Name': dishName,
+                'Restaurant Name': restaurantName
+            });
+
+            console.log("Food Item Added to Cart event pushed to dataLayer");
+        }
+
+        function triggerPaymentSuccessful() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'Payment Successful' // Event name
+            });
+
+            console.log("Payment Successful event pushed to dataLayer");
+        }
+
+    </script>
+</body>
+</html>
