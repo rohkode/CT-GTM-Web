@@ -1,0 +1,514 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2024-11-28 11:33:35",
+    "containerVersion": {
+        "path": "accounts/6252615448/containers/197118610/versions/5",
+        "accountId": "6252615448",
+        "containerId": "197118610",
+        "containerVersionId": "5",
+        "name": "Clevertap with Web Push",
+        "container": {
+            "path": "accounts/6252615448/containers/197118610",
+            "accountId": "6252615448",
+            "containerId": "197118610",
+            "name": "gtm.web.com",
+            "publicId": "GTM-T4FLLSGZ",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1728539236191",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6252615448/containers/197118610/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-T4FLLSGZ"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "tagId": "3",
+                "name": "CleverTap Web SDK",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script type=\"text/javascript\">\n     var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};\n // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page\nclevertap.account.push({\"id\": \"886-85W-7Z7Z\"});\nclevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data\nclevertap.privacy.push({useIP: true}); //set the flag to true, if the user agrees to share their IP data\n (function () {\n         var wzrk = document.createElement('script');\n         wzrk.type = 'text/javascript';\n         wzrk.async = true;\n         wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';        \n         var s = document.getElementsByTagName('script')[0];\n         s.parentNode.insertBefore(wzrk, s);\n  })();\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1728539558578",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "tagId": "11",
+                "name": "sendUserData",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n    clevertap.onUserLogin.push({\n        \"Site\": {\n            \"Identity\": {{userIdentity}},\n            \"Name\": {{userName}},\n            \"Email\": {{userEmail}},\n            \"Phone\": {{userPhone}},\n            \"Gender\": {{userGender}}\n        }\n    });\n    console.log(\"CleverTap onUserLogin called with user data\");\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1728542915624",
+                "firingTriggerId": [
+                    "10"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "tagId": "16",
+                "name": "Food Item Added to Cart",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n    clevertap.event.push(\"Food Item Added to Cart\", {\n        \"Dish Name\": {{Dish Name}},\n        \"Restaurant Name\": {{Restaurant Name}} \n    });\n    console.log(\"CleverTap event pushed for Food Item Added to Cart\");\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1728555830214",
+                "firingTriggerId": [
+                    "14"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "tagId": "17",
+                "name": "Payment Successful",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n    clevertap.event.push(\"Payment Successful\");\n    console.log(\"CleverTap event pushed for Payment Successful\");\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1728555861421",
+                "firingTriggerId": [
+                    "15"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "tagId": "20",
+                "name": "CleverTap Push Notification Request",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "clevertap.notifications.push({\n   \t\"titleText\": \"Would you like to receive Push Notifications?\",\n   \t\"bodyText\": \"We promise to only send you relevant content and give you updates on your transactions\",\n   \t\"okButtonText\": \"Sign me up!\",\n   \t\"rejectButtonText\": \"No thanks\",\n   \t\"okButtonColor\":\"#F28046\",\n   \t\"askAgainTimeInSeconds\":5,\n  \t\"serviceWorkerPath\": \"/Users/rohit.khandka/Documents/GTM-CT-Website/clevertap-sw.js\"\n  });"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1732792306486",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "triggerId": "10",
+                "name": "sendUserData",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "User Logged In"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1728543470398"
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "triggerId": "14",
+                "name": "Food Item Added to Cart Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "Food Item Added to Cart"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1728555691619"
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "triggerId": "15",
+                "name": "Payment Successful Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "Payment Successful"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1728555719461"
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "triggerId": "19",
+                "name": "clevertapSDKLoaded",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "clevertapSDKLoaded"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1729836995359"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "variableId": "5",
+                "name": "userIdentity",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userIdentity"
+                    }
+                ],
+                "fingerprint": "1728545015135",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "variableId": "6",
+                "name": "userName",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userName"
+                    }
+                ],
+                "fingerprint": "1728545048151",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "variableId": "7",
+                "name": "userEmail",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userEmail"
+                    }
+                ],
+                "fingerprint": "1728544989227",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "variableId": "8",
+                "name": "userPhone",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userPhone"
+                    }
+                ],
+                "fingerprint": "1728545026591",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "variableId": "9",
+                "name": "userGender",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userGender"
+                    }
+                ],
+                "fingerprint": "1728545002996",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "variableId": "12",
+                "name": "Dish Name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Dish Name"
+                    }
+                ],
+                "fingerprint": "1728555603621",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "variableId": "13",
+                "name": "Restaurant Name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Restaurant Name"
+                    }
+                ],
+                "fingerprint": "1728555633717",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6252615448",
+                "containerId": "197118610",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1732793335157",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6252615448/containers/197118610/versions/5?apiLink=version"
+    }
+}
